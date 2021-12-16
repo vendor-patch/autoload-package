@@ -1,4 +1,11 @@
-Composer File Loader
+Autoloading zeugs from composer.json
+====================
+Forked from the original [Composer File Loader](https://github.com/Wilkins/composer-file-loader),
++ add Classmap support and use it in the frdl/codebase lib.
+
+
+
+
 ====================
 
 Allows you to load a composer.json file just as composer would do it.
