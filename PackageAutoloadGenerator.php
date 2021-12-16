@@ -1,10 +1,57 @@
 <?php
 
-namespace PackageLoader;
+namespace Webfan\Autoload;
+use Frdlweb\Contract\Autoload\LoaderInterface;
+use Frdlweb\Contract\Autoload\ClassLoaderInterface;
+use Frdlweb\Contract\Autoload\Psr4GeneratorInterface;
+use Frdlweb\Contract\Autoload\ClassmapGeneratorInterface;
+use Frdlweb\Contract\Autoload\GeneratorInterface;
+use Frdlweb\Contract\Autoload\ResolverInterface;
+use Frdlweb\Contract\Autoload\ConditionalResolverInterface;
+use Frdlweb\Contract\Autoload\ContextInterface;
+use Nette;
+use SplFileInfo;
+use Webfan\Traits\WithContextDirectories as DirectoriesTrait;
+use Webfan\Traits\WithTimeout;
 
-class PackageLoader
+
+/** 
+
+use Frdlweb\Contract\Autoload;
+ 
+
+	interface ClassmapGeneratorInterface {				
+		public function addDirectory(string $dir); 
+	}	
+	
+
+
+
+
+use Frdlweb\Contract\Autoload\GeneratorInterface; 
+
+	   public function withDirectory($dir); 
+	   public function withAlias(string $alias, string $rewrite); 
+	   public function withClassmap(array $classMap = null); 
+	   public function withNamespace($prefix, $server, $prepend = false);
+*/
+
+class PackageAutoloadGeneratorimplements implements
+	LoaderInterface, 
+	ClassLoaderInterface, 
+	ClassmapGeneratorInterface,
+	ResolverInterface,
+	ConditionalResolverInterface  // Interface: public function withContext(ContextInterface $Context); 
 {
-    public $dir;
+	use Nette\SmartObject,
+      	DirectoriesTrait, 
+	    WithTimeout,
+	    ConditionalAutoloadNegotiationTrait  //Implements public function withContext(Context $Context)
+		;
+	
+{
+    
+    protected $dir;
 
     public function getComposerFile()
     {
