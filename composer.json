@@ -1,0 +1,30 @@
+{
+  "name" : "vendor-patch/autoload-package",
+  "type" : "library",
+  "description": "This is forked from [Wilkins/composer-file-loader](https://github.com/Wilkins/composer-file-loader) to use it e.g. in the frdl/codebase ClassmapGenerator classes.",	  
+  "license": ["MIT"],	 
+  "authors":[    
+	  {
+	    "name" : "Thibault Taillandier",
+	    "homepage" : "https://github.com/Wilkins/composer-file-loader"
+	  },    
+	  {
+	    "name" : "Till Wehowski",
+	    "email" : "software@frdl.de"
+	  }
+	  ],
+  "require" : {
+	    "php": ">=7.2",
+      "frdl/codebase" : "*",
+      "frdl/webfan" : "*"
+  },	  
+  "autoload": {
+    "files" : ["PackageAutoloadGenerator.php"],  
+    "psr-4": {
+     
+     }
+  },
+ "suggest" : {
+   
+ }
+}
