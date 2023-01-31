@@ -14,8 +14,7 @@
 	  }
 	  ],
   "require" : {
-       "php": ">=7.2",
-      "frdl/codebase" : "*",
+       "php": ">=7.2 | >=8.2",
       "frdl/webfan" : "*"
   },	  
   "autoload": {
